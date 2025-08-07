@@ -1,13 +1,18 @@
-numero_segreto = 4
+import random
 
-print("\nIndovina il numero tra 1 e 10!\n")
+numero_segreto = random.randint(1, 5)
 
-risposta = input("Il tuo tentativo: ")
+print("\nIndovina il numero tra 1 e 5!\n")
 
-risposta = int(risposta)
+while True:
+    risposta = int(input("Il tuo tentativo: "))
 
-if numero_segreto == risposta:
-    print("\nRisposta corretta!")
-else:
-    print("\nRisposta sbagliata!")
+    if risposta < numero_segreto:
+        print("Troppo basso!")
+    elif risposta > numero_segreto:
+        print("Troppo alto!")
+    else:
+        print("\nRisposta corretta!")
+        break
 
+print("Fine del gioco, ciao!")
